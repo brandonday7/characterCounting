@@ -1,34 +1,22 @@
 var args = process.argv;
 countLetters(args[2]);
 
+
 function countLetters(inputString)
 {
-  var lettersInString = [];
-  for (var i = 0; i < inputString.length; i++)
+  var lettersInString = {};
+  lettersInString[inputString[0]] = 1;
+  for (var i = 1; i < inputString.length; i++)
   {
-    var currentLetter = inputString[i];
-    var letterObject = {letter: currentLetter, occurences: 1};
-    console.log(letterObject);/*
-    if (alreadySeen(inputString[i]) > 0)
+    if (lettersInString[inputString[i]])
     {
-      lettersInString[alreadySeen]++;
+      lettersInString[inputString[i]]++;
     }
     else
     {
-
-    } */
+      lettersInString[inputString[i]] = 1;
+    }
   }
+  console.log(lettersInString);
 
 }
-
-
-
-/*
-
-look at current letter
-has letter been seen yet?
-  yes: incrememnt occurrences
-  no: push into seenLetters and increment occurences
-
-
-*/
